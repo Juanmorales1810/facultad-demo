@@ -1,0 +1,75 @@
+---
+import { Orbit, Code, Leaf } from 'lucide-react';
+
+const carreras = [
+    {
+        icon: Orbit,
+        title: 'Ciencias del Espacio y Física',
+        description:
+            'Explora el universo, la estructura de la Tierra y las leyes fundamentales de la naturaleza.',
+        items: ['LIC. EN ASTRONOMÍA', 'LIC. EN GEOFÍSICA', 'LIC. EN FÍSICA'],
+    },
+    {
+        icon: Leaf,
+        title: 'Ciencias Naturales',
+        description:
+            'Estudia la vida, los ecosistemas y la formación geológica de nuestro planeta.',
+        items: ['LIC. EN BIOLOGÍA', 'LIC. EN CIENCIAS GEOLÓGICAS'],
+    },
+    {
+        icon: Code,
+        title: 'Ciencias de la Computación',
+        description:
+            'Domina la tecnología, desarrolla software y crea soluciones digitales innovadoras.',
+        items: [
+            'LIC. EN CIENCIAS DE LA COMPUTACIÓN',
+            'LIC. EN SISTEMAS DE INFORMACIÓN',
+            'TEC. UNIVERSITARIA EN PROGRAMACIÓN WEB',
+        ],
+    },
+];
+---
+
+<section class="py-32">
+    <div class="container mx-auto px-4">
+        <div class="mx-auto max-w-4xl space-y-16">
+            <div class="space-y-4 text-center">
+                <h2 class="text-3xl font-semibold tracking-tight md:text-4xl">
+                    ¿Qué carreras puedo cursar?
+                </h2>
+                <p
+                    class="text-muted-foreground mx-auto max-w-2xl text-lg tracking-tight md:text-xl">
+                    Descubre nuestra amplia oferta académica en ciencias exactas, físicas y
+                    naturales
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                {
+                    carreras.map((carrera, index) => (
+                        <div class="border-border hover:border-primary/50 flex flex-col items-start gap-6 rounded-lg border p-6 transition-all hover:shadow-md md:flex-row">
+                            <div class="flex-shrink-0">
+                                <div class="bg-primary/10 text-primary flex h-12 w-12 items-center justify-center rounded-lg">
+                                    <carrera.icon className="h-6 w-6" />
+                                </div>
+                            </div>
+                            <div class="flex-1 space-y-3">
+                                <h3 class="text-xl font-semibold">{carrera.title}</h3>
+                                <p class="text-muted-foreground leading-relaxed">
+                                    {carrera.description}
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    {carrera.items.map((item, itemIndex) => (
+                                        <span class="bg-secondary hover:bg-primary/10 hover:text-primary inline-flex cursor-default items-center rounded-full px-3 py-1 text-xs font-medium transition-colors">
+                                            {item}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</section>

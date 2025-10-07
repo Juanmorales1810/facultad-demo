@@ -1,0 +1,14 @@
+---
+import { HeroIngresantes } from '@/components/interfaces/HeroIngresantes';
+import Carreras from '@/components/interfaces/Carreras.astro';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+    title="Inscripciones Ingresantes 2026 - Facultad de Ciencias Exactas, Físicas y Naturales UNSJ"
+    description="Sitio web oficial de la Facultad de Ciencias Exactas, Físicas y Naturales de la Universidad Nacional de San Juan"
+    canonical="agregarurl.com/"
+    image="agregarurl.com/metadata.jpg">
+    <HeroIngresantes client:load />
+    <Carreras />
+</Layout>

@@ -1,0 +1,14 @@
+---
+import { Blogs } from '@/components/interfaces/Blogs';
+import Hero from '@/components/interfaces/Hero';
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout
+    title="Facultad de Ciencias Exactas, Físicas y Naturales UNSJ"
+    description="Sitio web oficial de la Facultad de Ciencias Exactas, Físicas y Naturales de la Universidad Nacional de San Juan"
+    canonical="agregarurl.com/"
+    image="agregarurl.com/metadata.jpg">
+    <Hero client:load />
+    <Blogs client:load />
+</Layout>
