@@ -7,14 +7,36 @@ const carreras = [
         title: 'Ciencias del Espacio y Física',
         description:
             'Explora el universo, la estructura de la Tierra y las leyes fundamentales de la naturaleza.',
-        items: ['LIC. EN ASTRONOMÍA', 'LIC. EN GEOFÍSICA', 'LIC. EN FÍSICA'],
+        items: [
+            {
+                nombre: 'LIC. EN ASTRONOMÍA',
+                url: 'https://exactas.unsj.edu.ar/wp-content/uploads/2022/08/Astronomia.pdf',
+            },
+            {
+                nombre: 'LIC. EN GEOFÍSICA',
+                url: 'https://exactas.unsj.edu.ar/wp-content/uploads/2022/08/Geofisica.pdf',
+            },
+            {
+                nombre: 'LIC. EN FÍSICA',
+                url: 'https://exactas.unsj.edu.ar/wp-content/uploads/2022/08/Fisica.pdf',
+            },
+        ],
     },
     {
         icon: Leaf,
         title: 'Ciencias Naturales',
         description:
             'Estudia la vida, los ecosistemas y la formación geológica de nuestro planeta.',
-        items: ['LIC. EN BIOLOGÍA', 'LIC. EN CIENCIAS GEOLÓGICAS'],
+        items: [
+            {
+                nombre: 'LIC. EN BIOLOGÍA',
+                url: 'https://exactas.unsj.edu.ar/wp-content/uploads/2023/06/Biologia-2023-1.pdf',
+            },
+            {
+                nombre: 'LIC. EN CIENCIAS GEOLÓGICAS',
+                url: 'https://exactas.unsj.edu.ar/wp-content/uploads/2023/07/Geologia-2023.pdf',
+            },
+        ],
     },
     {
         icon: Code,
@@ -22,9 +44,18 @@ const carreras = [
         description:
             'Domina la tecnología, desarrolla software y crea soluciones digitales innovadoras.',
         items: [
-            'LIC. EN CIENCIAS DE LA COMPUTACIÓN',
-            'LIC. EN SISTEMAS DE INFORMACIÓN',
-            'TEC. UNIVERSITARIA EN PROGRAMACIÓN WEB',
+            {
+                nombre: 'LIC. EN CIENCIAS DE LA COMPUTACIÓN',
+                url: 'https://exactas.unsj.edu.ar/wp-content/uploads/2023/07/Computacion-2023-2.pdf',
+            },
+            {
+                nombre: 'LIC. EN SISTEMAS DE INFORMACIÓN',
+                url: 'https://exactas.unsj.edu.ar/wp-content/uploads/2023/07/Informacion-2023-2.pdf',
+            },
+            {
+                nombre: 'TEC. UNIVERSITARIA EN PROGRAMACIÓN WEB',
+                url: 'https://exactas.unsj.edu.ar/wp-content/uploads/2023/05/Web-2023-2.pdf',
+            },
         ],
     },
 ];
@@ -60,9 +91,23 @@ const carreras = [
                                 </p>
                                 <div class="flex flex-wrap gap-2">
                                     {carrera.items.map((item, itemIndex) => (
-                                        <span class="bg-secondary hover:bg-primary/10 hover:text-primary inline-flex cursor-default items-center rounded-full px-3 py-1 text-xs font-medium transition-colors">
-                                            {item}
-                                        </span>
+                                        <a
+                                            href={item.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="bg-secondary hover:bg-primary/10 hover:text-primary group inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-colors">
+                                            {item.nombre}
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                class="size-3 opacity-0 transition-opacity group-hover:opacity-100"
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2">
+                                                <path d="M7 7h10v10" />
+                                                <path d="M7 17L17 7" />
+                                            </svg>
+                                        </a>
                                     ))}
                                 </div>
                             </div>
